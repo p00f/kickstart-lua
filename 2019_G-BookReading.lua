@@ -1,4 +1,4 @@
-local T = tonumber(io.read())
+T = tonumber(io.read())
 
 function mysplit(sep, inputstr)
   if sep == nil then
@@ -21,12 +21,7 @@ for ks = 1, T do
   local f = {}
   local tornRecord = {}
 
-  -- untear all pages
-  for d = 1, N do
-    tornRecord[d] = "not torn"
-  end
-
-  -- tear needed pages
+  -- tear pages
   for c = 1, M do
     tornRecord[TornArray[c]] = "torn"
   end
@@ -35,7 +30,7 @@ for ks = 1, T do
   for i = 1, N do
     local x = 0
     for j = 1, math.floor(N / i) do
-      if tornRecord[i * j] == "not torn" then
+      if tornRecord[i * j] ~= "torn" then
         x = x + 1
       end
     end
