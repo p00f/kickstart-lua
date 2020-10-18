@@ -1,6 +1,6 @@
 T = tonumber(io.read())
 
--- function to split a string space-separated numbers into a table
+-- function to split a of string space-separated numbers into a table
 function mysplit(sep, inputstr)
   if sep == nil then
     sep = "%s"
